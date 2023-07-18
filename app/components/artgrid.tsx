@@ -9,10 +9,14 @@ export default function ArtGrid() {
     }
     return (
         <div className="h-screen bg-red-300 flex justify-center">
-            <div className="grid grid-cols-5 w-1/2 gap-0 bg-blue-600"> 
+            <div className="grid grid-cols-5 w-[1250px] gap-0 bg-blue-600"> 
                 {
                     arts.map((content, index) => {
-                        return <Image key={index} alt={(index).toString()} src={content} width={200} height={200} />
+                        return (
+                            <div className="w-[250px] h-[250px]">
+                                <Image key={index} alt={(index).toString()} src={content} width={250} height={250} objectFit="fill" />
+                            </div>
+                        )
                     })
                 }
             </div>
