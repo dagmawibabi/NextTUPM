@@ -3,8 +3,8 @@
 import Image from "next/image";
 
 export default function ArtGrid() {
-    let arts: any[] = Array(50);
-    for(var i = 1; i < 51; i++){
+    let arts: any[] = Array(10);
+    for(var i = 1; i < 11; i++){
         arts.push(`/art/${(i)}.png`);
     }
     return (
@@ -13,8 +13,8 @@ export default function ArtGrid() {
                 {
                     arts.map((content, index) => {
                         return (
-                            <div className="w-[250px] h-[250px]">
-                                <Image key={index} alt={(index).toString()} src={content} width={250} height={250} objectFit="fill" />
+                            <div className="w-[300px] h-[300px] hover:animate-scaleUp">
+                                <Image key={index} alt={(index).toString()} src={content} style={{objectFit: "fill"}} width={250} height={250}  />
                             </div>
                         )
                     })
